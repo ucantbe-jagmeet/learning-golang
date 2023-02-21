@@ -18,18 +18,17 @@ func main() {
 
 	file, err := os.Create("./mygofile.txt")  // os is used to create the file
 
-	checkNilErr(err)
-
+	// if err!=nil{
+	// 	panic(err) // panic will shut down the program and throw whatever error we get
+	// }
 
 	length, err := io.WriteString(file, content) // io is used to write anything
 	checkNilErr(err)
-
 
 	fmt.Println("Length is:",length)
 	defer file.Close()
 
 	readFile("./mygofile.txt")
-
 
 }
 
@@ -38,7 +37,6 @@ func readFile(fileName string){
 	checkNilErr(err)
 
 	fmt.Println("text data inside the file is \n",string(databyte))
-
 }
 
 
