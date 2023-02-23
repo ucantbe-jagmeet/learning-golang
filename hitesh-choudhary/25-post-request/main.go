@@ -32,7 +32,7 @@ func PerformGetRequest(){
 	content, _ :=  ioutil.ReadAll(response.Body)
 	byteCount, _ := responseString.Write(content)
 
-	fmt.Println( "Byte count is: " ,byteCount) // shows content length
+	fmt.Println( "Byte count is: " ,byteCount) // shows content length in bytes
 	fmt.Println(responseString.String())
 
 	// fmt.Println(string(content))
